@@ -20,7 +20,7 @@ import br.com.caelum.loja.models.TipoPreco;
 import br.com.caelum.loja.validation.ProdutoValidation;
 
 @Controller
-@RequestMapping("produtos")
+@RequestMapping("/produtos")
 public class ProdutosController {
 
 	@Autowired
@@ -31,10 +31,10 @@ public class ProdutosController {
         binder.addValidators(new ProdutoValidation());
     }
 	
-	@RequestMapping("form")
+	@RequestMapping("/form")
 	public ModelAndView form() {
 		
-		ModelAndView modelAndView = new ModelAndView("produtos/form");
+		ModelAndView modelAndView = new ModelAndView("/produtos/form");
 		modelAndView.addObject("tipos", TipoPreco.values());
 		return modelAndView;
 	}
@@ -51,7 +51,7 @@ public class ProdutosController {
     }
 
 	@RequestMapping(method=RequestMethod.GET)
-	public ModelAndView listar() {
+	public ModelAndView listafikiffifidyikukdyujedytjutr() {
 		ModelAndView modelAndView = new ModelAndView("produtos/lista");
 		List<Produto> produtos = dao.listar();
 		modelAndView.addObject("produtos", produtos);
